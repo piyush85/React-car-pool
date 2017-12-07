@@ -1,14 +1,16 @@
 To Setup the project
 
 from project root
-run npm install
 
-from projectroot /server
-run npm install
+    npm install
 
-To Run the project
+from projectroot/server
 
+    npm install
+
+To Run the project:
 from the project root folder run
+    
     screen node server/server.js
 
     npm start
