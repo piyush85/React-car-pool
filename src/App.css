@@ -93,6 +93,7 @@
   align-items: center;
   justify-content: center;
   border:1px solid #ddd;
+  cursor: pointer;
 }
 .driver-tile-container-selected{
   display: flex;

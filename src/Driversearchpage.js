@@ -44,7 +44,7 @@ class DriverSearch extends Component {
                             obj = {};
                         obj[`dataSource${key}`] = autoVal;
                         oThis.setState({drivers:response.data.data});
-                        //oThis.setState(obj);
+                        oThis.setState(obj);
                     }
                 });
         };

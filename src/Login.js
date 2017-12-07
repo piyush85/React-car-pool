@@ -26,8 +26,8 @@ class Login extends Component {
                 <main className="login-Container">
                     <div className="flexItems">
                         <TextField
-                            hintText="10-digit mobile number or email ID"
-                            floatingLabelText="Username"
+                            hintText="email ID"
+                            floatingLabelText="Email"
                             onChange = {(event,newValue) => this.setState({username:newValue})}
                         />
                         <br/>
