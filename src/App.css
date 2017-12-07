@@ -1,0 +1,141 @@
+
+@media (max-width: 1100px) {
+  :root{
+    --colNum: 1;
+  }
+}
+@media (min-width: 1101px) {
+  :root{
+    --colNum: 2;
+  }
+}
+
+.page{
+  margin: 5% auto;
+}
+.App{
+  border: 1px solid #ddd;
+  width: 80%;
+  margin:0 auto;
+}
+
+.header {
+  border: 1px solid #ddd;
+  width: 80%;
+  margin:0 auto;
+  padding: 10px 0;
+  display: flex;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.flex-box-fixed{
+  display:flex;
+  width:20%;
+  height:100%;
+  align-items:center;
+}
+.header-flex-box-fixed{
+  display:flex;
+  width:10%;
+  height:100%;
+  justify-content:center;
+}
+.flex-box-fixed img{
+  margin: 0 auto;
+}
+.flex-box{
+  display:flex;
+  width:80%;
+  height:100%;
+  padding-top: 20px;
+}
+.header-flex-box{
+  display:flex;
+  width:80%;
+  padding-top:10px
+}
+.max-width-item{
+  width:80%;
+}
+.bold{
+  font-weight:bold;
+}
+.short-font{
+  font-size:10px;
+  color:#a9a5a5;
+}
+.medium-font{
+  font-size: 11px;
+  font-weight:bold;
+}
+.driver-tile-container{
+  display: flex;
+  height:70px;
+  align-items: center;
+  justify-content: center;
+  border:1px solid #ddd;
+}
+.driver-tile-container-selected{
+  display: flex;
+  height:70px;
+  align-items: center;
+  justify-content: center;
+  border:1px solid #ddd;
+  background-color:#00d0ff73;
+}
+
+.login-Container{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content:center;
+  height:auto;
+  margin-top: 5%;
+}
+.flexItems{
+  border:1px solid #ddd;
+  width:60%;
+  text-align: center;
+}
+.flexItems > div{
+  width: 90%!important;
+}
+.search-box{
+  display:grid;
+  grid-template-columns: repeat(var(--colNum), minmax(30%, 1fr));
+  grid-gap: 30px 100px;
+  width: 80%;
+}
+.one {
+  border: 1px solid #ddd;
+  padding:0 20px;
+}
+.two {
+  border: 1px solid #ddd;
+  padding:0 20px;
+}
+.button{
+  margin:50px auto 20px auto;
+}
+.footer{
+  margin: 20px auto;
+}
