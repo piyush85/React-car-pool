@@ -1,5 +1,6 @@
 
 const jsonfile = require('jsonfile');
+const path = require('path');
 
 exports.register = function(req,res){
     var today = new Date(),
@@ -15,8 +16,9 @@ exports.register = function(req,res){
             "to": req.body.to,
             "distance":10
         },
-        driverFile = './data/drivers.json',
-        loginFile = './data/userdata.json';
+        driverFile = path.resolve('server/data/drivers.json'),
+        loginFile = path.resolve('server/data/userdata.json');
+
     loginObj[driver.email] = driver.password;
 
     jsonfile.readFile(driverFile,function (err, obj) {
@@ -25,7 +27,7 @@ exports.register = function(req,res){
         }else{
             if(!Array.isArray(obj))
                 obj=[];
-            obj.push(driver)
+            obj.push(driver);
             jsonfile.writeFile(driverFile, obj, function (err) {
                 if (err) {
                     console.log("Error ocurred while saving driver", err);
@@ -66,13 +68,13 @@ exports.login = function(req,res){
     var email= req.body.email;
     var password = req.body.password;
 
-    var file = './data/userdata.json';
+    var file = path.resolve('server/data/userdata.json');
     jsonfile.readFile(file,function (err, obj) {
         if(err){
             console.log("Error ocurred in reading db",err);
         }else{
-            let loginArr = obj.map((user, i)=>{
-                return Object.keys(user)[0] === email && user[email] === password;
+            let loginArr = obj.filter((user, i)=>{
+                return (Object.keys(user)[0] === email && user[email] === password);
             });
 
             if(loginArr.length){
@@ -81,9 +83,9 @@ exports.login = function(req,res){
                     "success":"login sucessfull"
                 })
             }else{
+                res.status(204);
                 res.send({
-                    "code":204,
-                    "success":"login failed"
+                    "error":"login failed"
                 })
             }
 
@@ -95,9 +97,8 @@ exports.login = function(req,res){
 exports.drivers = function(req,res){
     var from= req.query.from?req.query.from.toLowerCase() : null,
         to = req.query.to?req.query.to.toLowerCase() : null,
-        file = './data/drivers.json',
+        file = path.resolve('server/data/drivers.json'),
         returnArr;
-
     jsonfile.readFile(file,function (err, arr) {
         if(err){
             console.log("Error ocurred in reading db",err);

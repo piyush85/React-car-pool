@@ -64,12 +64,10 @@ class Login extends Component {
                     self.props.history.push('/drivers');
                 }
                 else if(response.status === 204){
-                    console.log("Username password do not match");
-                    alert("username password do not match")
+                    alert("Login failed")
                 }
                 else{
-                    console.log("Username does not exists");
-                    alert("Username does not exist");
+                    alert("Login Failed");
                 }
             })
             .catch(function (error) {

@@ -11,7 +11,7 @@ class DriverTile extends Component {
             name:"",
             distance:"",
             route:"",
-            car:"",git checkout --orphan latest_branch
+            car:"",
             seats:"",
             avatar: avatar,
             tileClass:"driver-tile-container"

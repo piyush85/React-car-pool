@@ -1,3 +1,19 @@
+To Setup the project
+
+from project root
+run npm install
+
+from projectroot /server
+run npm install
+
+To Run the project
+
+from the project root folder run
+    screen node server/server.js
+
+    npm start
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
